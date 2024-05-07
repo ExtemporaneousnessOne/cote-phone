@@ -1,0 +1,123 @@
+#timeHere {
+	width: 416px;
+	height: 164px;
+        z-index: 20;
+        position: absolute;
+}
+
+.circle2 {
+ width: 200px;
+  height: 200px;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%2315EDE8FF' stroke-width='22' stroke-dasharray='10%2c40' stroke-dashoffset='70' stroke-linecap='butt'/%3e%3c/svg%3e");
+border-radius: 100px;
+  position: relative;
+  animation: rotateBorder2;
+  animation-duration:  10s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%2315EDE8FF' stroke-width='22' stroke-dasharray='10%2c40' stroke-dashoffset='70' stroke-linecap='butt'/%3e%3c/svg%3e");
+border-radius: 100px;
+  position: relative;
+  animation: moveInFromLeft, rotateBorder;
+  animation-duration:  10s, 10s;
+  animation-delay: 0s, 10s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: linear, linear;
+}
+
+
+@keyframes rotateBorder2 {
+  0% {
+     opacity: 0;
+   }
+  100% {
+     opacity: 1;
+   }
+}
+
+
+@keyframes rotateBorder {
+  0% {
+     transform: rotateX(70deg) scale(5)  translateY(40px); 
+   }
+  100% {
+     transform: rotateX(70deg) scale(5)  translateY(40px) RotateZ(360deg);
+   }
+}
+
+@keyframes moveInFromLeft {
+  0% {
+     transform: rotateX(70deg) scale(5)  translateY(40px) translateX(-1000px);
+  }
+  100% {
+     transform: rotateX(70deg) scale(5) translateY(40px);
+  }
+}
+
+@keyframes spin2 { 
+  100% { 
+    transform: rotateX(360deg); 
+  }
+}
+
+body {
+  background-color: black;
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
+#hour, #minute, #colon {
+  color: white;
+  text-shadow: 0px 0px 10px #fff;
+  font-size: 150px;
+  animation: fadeIn 10s linear 1 forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#colon {
+  color: white;
+  font-size: 150px;
+  animation: fadeInOut 2s linear infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.behind {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+}
